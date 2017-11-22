@@ -1,0 +1,33 @@
+<% layout( 'layout' ) -%>
+
+<div class="row">
+    <div class="col-md-12">
+    <% if(carts.items.length > 0) { %>
+    <h2>Shopping Cart<span><a  href="/cart/remove"> Empty cart </a></span></h2>
+
+    <table class="table table-stripped">
+        <thead>
+        <tr>
+            <th width="650">Item</th>
+            <th width="100">Quantity</th>
+            <th width="100">Total</th>
+            <th width="100"></th>
+        </thead>
+        <tbody>
+        <% for (var i = 0; i < carts.items.length; i++) { %>
+            <tr>
+                <td><a href="books/details/<%= carts.items[i].item %>"></a><%= carts.items[i].title %></td>
+                <td><%= carts.items[i].title %></td>
+                <td><%= carts.items[i].qty %></td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+    <% } else { %>
+        <p>There are no items in your cart!!</p>
+    <% } %>
+    </div>
+</div>
+<h4> Total: <strong>$<%= carts.total %></strong></h4>
+<input type="image" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_buynow_86x21.png"  name="submit" alt="Buy Now">
+

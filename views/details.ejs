@@ -1,0 +1,20 @@
+<% layout( 'layout' ) -%>
+<p>Welcome to <%= title %></p>
+
+<div class="col-md-4 book">
+    <img src="../../images/uploads/<%= book.image %>" class="thumbnail img-responsive">
+</div>
+<div class="col-md-8 book">
+    <h2><%= book.title %></h2>
+    <ul class="book info">
+        <li>Author: <%= book.author %></li>
+    </ul>
+    <br>
+    <div class="price">Buy it for <span><%= book.price %></span></div>
+    <br>
+    <p><%= book.description %></p>
+    <form method="post" action="/cart/add/<%= book._id %>" >
+        <input type="submit" class="btn btn-success" class="button success" value="Add To Cart">
+        <input type="hidden" value="{_csrf}" name="_csrf">
+    </form>
+</div>

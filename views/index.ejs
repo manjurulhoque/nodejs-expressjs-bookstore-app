@@ -1,2 +1,28 @@
 <% layout( 'layout' ) -%>
-<p>Welcome to <%= title %></p>
+
+<% if(books.length > 0) { %>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">Latest Books</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <% for (var i = 0; i < books.length; i++) { %>
+                    <div class="col-md-3">
+                        <div class="col-md-12">
+                            <img class="thumbnail img-responsive" src="images/uploads/<%= books[i].image %>">
+                            <h4><%= books[i].title %></h4>
+                            <p><%= books[i].description %></p>
+                            <div class="price">Buy it for <span>$<%= books[i].price %></span></div>
+                            <a style="margin-top:30px;" class="btn btn-primary" href="/books/show/<%= books[i]._id %>">View Details</a>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+<% } else { %>
+
+<h3>No books here</h3>
+
+<% } %>
