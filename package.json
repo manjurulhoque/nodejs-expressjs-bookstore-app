@@ -10,12 +10,13 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "ejs": "~2.5.6",
+    "ejs-locals": "*",
     "express": "*",
-    "morgan": "~1.8.1",
-    "serve-favicon": "~2.4.2",
     "mongodb": "*",
     "mongoose": "*",
-    "ejs-locals": "*",
-    "multer": "*"
+    "morgan": "~1.8.1",
+    "multer": "*",
+    "nodemon": "^1.12.1",
+    "serve-favicon": "~2.4.2"
   }
 }
